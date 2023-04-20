@@ -1,12 +1,13 @@
 <?xml version="1.0"?>
 <launch>
-    <param name="robot_description" command="$(find xacro)/xacro $(find robco_robot_description)/urdf/robot.xacro"/>
+    <arg name="debug" default="false"/>
+    <param name="robot_description" command="$(find xacro)/xacro $(find robco_description)/urdf/robot.xacro"/>
 
-    <node name="robco_wsbridge" pkg="robco_robot_interface" type="wsbridge.py" output="screen"/>
-    <node name="robco_hw_interface" pkg="robco_robot_interface" type="robco_hw_interface_node" output="screen" />
+    <node name="robco_hw" pkg="robco_hw" type="robco_hw_node" output="screen" launch-prefix="xterm -e gdb --args" if="$(arg debug)"/>
+    <node name="robco_hw" pkg="robco_hw" type="robco_hw_node" output="screen" unless="$(arg debug)"/>
 
-    <rosparam command="load" file="$(find robco_robot_interface)/config/control.yaml"/>
-    <node name="state_controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" args="robco_state_controller robco_position_controller_1 robco_position_controller_2 robco_position_controller_3 robco_position_controller_4 robco_position_controller_5"/>
+    <rosparam command="load" file="$(find robco_hw)/config/control.yaml"/>
+    <node name="state_controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" args="robco_state_controller robco_trajectory_controller"/>
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" output="screen"/>
     <!--<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" output="screen">
         <rosparam param="source_list">[robco_state_controller/joint_states]</rosparam>

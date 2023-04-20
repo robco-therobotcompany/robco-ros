@@ -9,9 +9,10 @@
 #include <curl/curl.h>
 #include <math.h>
 #include <sstream>
+#include <iostream>
 
 RobcoHW::RobcoHW(robcomm::Robot& robot) : robot(robot) { 
-    num_joints = robot.get_joint_count();
+    num_joints = this->robot.get_joint_count();
 
     // Initialize state vectors
     q.assign(num_joints, 0);
@@ -55,7 +56,7 @@ RobcoHW::~RobcoHW() {
 
 void RobcoHW::read(std::vector<double> q) {
     if (q.size() != num_joints) {
-        printf("error: RobcoHW::read received position vector of wrong size");
+        std::cout << "error: RobcoHW::read received position vector of wrong size" << std::endl;
         return;
     }
 

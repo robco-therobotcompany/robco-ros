@@ -222,10 +222,12 @@ def main():
 
         # Copy all immediate children STL files to target directory
         for f in dirFiles:
-            pass
-            #srcPath = os.path.join(dirPath, f)
-            #dstPath = os.path.join(newDir, f)
-            #shutil.copy(srcPath, dstPath)
+            if not isStlFile(f):
+                continue
+
+            srcPath = os.path.join(dirPath, f)
+            dstPath = os.path.join(newDir, f)
+            shutil.copy(srcPath, dstPath)
 
         # Parse module JSON
         jsonFilePath = os.path.join(dirPath, dirName + '.json')

@@ -1,0 +1,418 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+	<xacro:include filename="$(find robco_description)/urdf/robco_modules_base.xacro"/>
+	<xacro:macro name="robco_module_0081" params="name next">
+		<xacro:robco_link_module mesh_filename="0081_I148-400/I148-400.stl" name="${name}" next="${next}" tf_rpy="0.0 -0.0 0.0" tf_xyz="0 0 0.4"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0033" params="name next">
+		<xacro:robco_link_module mesh_filename="0033_I86-141/I86-141.stl" name="${name}" next="${next}" tf_rpy="0.0 -0.0 0.0" tf_xyz="0 0 0.141"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0110" params="name next">
+		<xacro:robco_base_module mesh_filename="0110_B148-90deg/B148-90deg.stl" name="${name}" next="${next}" tf_rpy="0 -1.57079632679 -0.0" tf_xyz="-0.07 0 0"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0065" params="name next">
+		<xacro:robco_drive_module distal_mesh_filename="0065_D86/D86-papa-distal.stl" distal_tf_rpy="0.0 -0.0 1.57079632679" distal_tf_xyz="0 0 0.0555" name="${name}" next="${next}" proximal_mesh_filename="0065_D86/D86-papa-proximal.stl" proximal_tf_rpy="1.57079632679 -0.0 1.57079632679" proximal_tf_xyz="0 0 0.064"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0924" params="name">
+		<xacro:robco_end_effector mesh_filename="0924_E-trical-weights-only-1000g/dummy.stl" name="${name}" tf_rpy="0.0 -0.0 0.0" tf_xyz="-0.08795 0 0.078"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0026" params="name next">
+		<xacro:robco_link_module mesh_filename="0026_L116-348/L116-348.stl" name="${name}" next="${next}" tf_rpy="0.0 1.57079632679 0" tf_xyz="0.348 0 0.068"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0005" params="name next">
+		<xacro:robco_link_module mesh_filename="0005_I86-150/I86-150.stl" name="${name}" next="${next}" tf_rpy="0.0 -0.0 0.0" tf_xyz="0 0 0.15"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0045" params="name next">
+		<xacro:robco_drive_module distal_mesh_filename="0045_D116/D116-legacy_distal.stl" distal_tf_rpy="0.0 -0.0 1.57079632679" distal_tf_xyz="0 0 0.0705" name="${name}" next="${next}" proximal_mesh_filename="0045_D116/D116-legacy_proximal.stl" proximal_tf_rpy="1.57079632679 -0.0 1.57079632679" proximal_tf_xyz="0 0 0.082"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0920" params="name">
+		<xacro:robco_end_effector mesh_filename="0920_E-trical-with-indicators-5000g/dummy.stl" name="${name}" tf_rpy="0.0 1.57079632679 0" tf_xyz="0.12 0 0.1"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0064" params="name next">
+		<xacro:robco_drive_module distal_mesh_filename="0064_D86/D86-legacy-distal.stl" distal_tf_rpy="0.0 -0.0 1.57079632679" distal_tf_xyz="0 0 0.0555" name="${name}" next="${next}" proximal_mesh_filename="0064_D86/D86-legacy-proximal.stl" proximal_tf_rpy="1.57079632679 -0.0 1.57079632679" proximal_tf_xyz="0 0 0.064"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0069" params="name next">
+		<xacro:robco_link_module mesh_filename="0069_I86-160/I86-160.stl" name="${name}" next="${next}" tf_rpy="0.0 -0.0 0.0" tf_xyz="0 0 0.16"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0038" params="name next">
+		<xacro:robco_drive_module distal_mesh_filename="0038_D116/D116-legacy_distal.stl" distal_tf_rpy="0.0 -0.0 1.57079632679" distal_tf_xyz="0 0 0.0705" name="${name}" next="${next}" proximal_mesh_filename="0038_D116/D116-legacy_proximal.stl" proximal_tf_rpy="1.57079632679 -0.0 1.57079632679" proximal_tf_xyz="0 0 0.082"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0025" params="name next">
+		<xacro:robco_link_module mesh_filename="0025_L116-448/L116-448.stl" name="${name}" next="${next}" tf_rpy="0.0 1.57079632679 0" tf_xyz="0.448 0 0.068"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0089" params="name next">
+		<xacro:robco_drive_module distal_mesh_filename="0089_D116/D116-876.0002-G-distal.stl" distal_tf_rpy="0.0 -0.0 1.57079632679" distal_tf_xyz="0 0 0.0702" name="${name}" next="${next}" proximal_mesh_filename="0089_D116/D116-876.0002-G-proximal.stl" proximal_tf_rpy="1.57079632679 -0.0 1.57079632679" proximal_tf_xyz="0 0 0.082"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0034" params="name next">
+		<xacro:robco_link_module mesh_filename="0034_I86-350/I86-350.stl" name="${name}" next="${next}" tf_rpy="0.0 -0.0 0.0" tf_xyz="0 0 0.35"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0802" params="name">
+		<xacro:robco_end_effector mesh_filename="0802_E-Zimmer-GEP2006IO-00-B/0802_E-Zimmer-GEP2006IO-00-B.stl" name="${name}" tf_rpy="0.0 -0.0 0.0" tf_xyz="0 0 0.1366"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0921" params="name">
+		<xacro:robco_end_effector mesh_filename="0921_E-trical-with-indicators-5500g/dummy.stl" name="${name}" tf_rpy="0.0 1.57079632679 0" tf_xyz="0.12 0 0.1"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0800" params="name">
+		<xacro:robco_end_effector mesh_filename="0800_E-generic-IO/0800_E-generic-IO.stl" name="${name}" tf_rpy="0.0 -0.0 0.0" tf_xyz="0 0 0"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0060" params="name next">
+		<xacro:robco_link_module mesh_filename="0060_L148-600/L148-600.stl" name="${name}" next="${next}" tf_rpy="0.0 1.57079632679 0" tf_xyz="0.6 0 0.085"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0008" params="name next">
+		<xacro:robco_link_module mesh_filename="0008_I86-400/I86-400.stl" name="${name}" next="${next}" tf_rpy="0.0 -0.0 0.0" tf_xyz="0 0 0.4"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0039" params="name next">
+		<xacro:robco_drive_module distal_mesh_filename="0039_D86/D86-legacy-distal.stl" distal_tf_rpy="0.0 -0.0 1.57079632679" distal_tf_xyz="0 0 0.0555" name="${name}" next="${next}" proximal_mesh_filename="0039_D86/D86-legacy-proximal.stl" proximal_tf_rpy="1.57079632679 -0.0 1.57079632679" proximal_tf_xyz="0 0 0.064"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0933" params="name">
+		<xacro:robco_end_effector mesh_filename="0933_E-trical-weights-only-5500g/dummy.stl" name="${name}" tf_rpy="0.0 -0.0 0.0" tf_xyz="-0.08795 0 0.078"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0029" params="name next">
+		<xacro:robco_link_module mesh_filename="0029_L116-800/L116-800.stl" name="${name}" next="${next}" tf_rpy="0.0 1.57079632679 0" tf_xyz="0.8 0 0.068"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0010" params="name next">
+		<xacro:robco_link_module mesh_filename="0010_I86-600/I86-600.stl" name="${name}" next="${next}" tf_rpy="0.0 -0.0 0.0" tf_xyz="0 0 0.6"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0057" params="name next">
+		<xacro:robco_link_module mesh_filename="0057_L148-550/L148-550.stl" name="${name}" next="${next}" tf_rpy="0.0 1.57079632679 0" tf_xyz="0.55 0 0.085"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0086" params="name next">
+		<xacro:robco_drive_module distal_mesh_filename="0086_D116/D116-876.0002-G-distal.stl" distal_tf_rpy="0.0 -0.0 1.57079632679" distal_tf_xyz="0 0 0.0702" name="${name}" next="${next}" proximal_mesh_filename="0086_D116/D116-876.0002-G-proximal.stl" proximal_tf_rpy="1.57079632679 -0.0 1.57079632679" proximal_tf_xyz="0 0 0.082"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0109" params="name next">
+		<xacro:robco_base_module mesh_filename="0109_B116-minus90deg/B86-minus90deg.stl" name="${name}" next="${next}" tf_rpy="3.14159265359 1.57079632679 0" tf_xyz="-0.07 0 0"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0035" params="name next">
+		<xacro:robco_link_module mesh_filename="0035_L86-336/L86-336.stl" name="${name}" next="${next}" tf_rpy="0.0 1.57079632679 0" tf_xyz="0.336 0 0.053"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0087" params="name next">
+		<xacro:robco_drive_module distal_mesh_filename="0087_D86/D86-876.0001-H-distal.stl" distal_tf_rpy="0.0 -0.0 1.57079632679" distal_tf_xyz="0 0 0.0552" name="${name}" next="${next}" proximal_mesh_filename="0087_D86/D86-876.0001-H-proximal.stl" proximal_tf_rpy="1.57079632679 -0.0 1.57079632679" proximal_tf_xyz="0 0 0.064"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0903" params="name">
+		<xacro:robco_end_effector mesh_filename="0903_E-gimatic-vacuum/E-gimatic-vacuum.stl" name="${name}" tf_rpy="0.0 -0.0 0.0" tf_xyz="0 0 0.12727"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0017" params="name next">
+		<xacro:robco_link_module mesh_filename="0017_L86-600/L86-600.stl" name="${name}" next="${next}" tf_rpy="0.0 1.57079632679 0" tf_xyz="0.6 0 0.053"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0072" params="name next">
+		<xacro:robco_link_module mesh_filename="0072_L86-240/L86-240.stl" name="${name}" next="${next}" tf_rpy="0.0 1.57079632679 0" tf_xyz="0.24 0 0.053"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0040" params="name next">
+		<xacro:robco_drive_module distal_mesh_filename="0040_D86/D86-legacy-distal.stl" distal_tf_rpy="0.0 -0.0 1.57079632679" distal_tf_xyz="0 0 0.0555" name="${name}" next="${next}" proximal_mesh_filename="0040_D86/D86-legacy-proximal.stl" proximal_tf_rpy="1.57079632679 -0.0 1.57079632679" proximal_tf_xyz="0 0 0.064"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0068" params="name next">
+		<xacro:robco_link_module mesh_filename="0068_I116-400/I116-400.stl" name="${name}" next="${next}" tf_rpy="0.0 -0.0 0.0" tf_xyz="0 0 0.4"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0031" params="name next">
+		<xacro:robco_link_module mesh_filename="0031_L86-55/L86-55.stl" name="${name}" next="${next}" tf_rpy="0 -1.57079632679 -3.14159265359" tf_xyz="0.0547 0 0.053"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0913" params="name">
+		<xacro:robco_end_effector mesh_filename="0913_E-trical-with-indicators-1500g/dummy.stl" name="${name}" tf_rpy="0.0 1.57079632679 0" tf_xyz="0.12 0 0.1"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0919" params="name">
+		<xacro:robco_end_effector mesh_filename="0919_E-trical-with-indicators-4500g/dummy.stl" name="${name}" tf_rpy="0.0 1.57079632679 0" tf_xyz="0.12 0 0.1"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0054" params="name next">
+		<xacro:robco_link_module mesh_filename="0054_L116-300/L116-300.stl" name="${name}" next="${next}" tf_rpy="0.0 1.57079632679 0" tf_xyz="0.3 0 0.068"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0931" params="name">
+		<xacro:robco_end_effector mesh_filename="0931_E-trical-weights-only-4500g/dummy.stl" name="${name}" tf_rpy="0.0 -0.0 0.0" tf_xyz="-0.08795 0 0.078"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0041" params="name next">
+		<xacro:robco_drive_module distal_mesh_filename="0041_D86/D86-legacy-distal.stl" distal_tf_rpy="0.0 -0.0 1.57079632679" distal_tf_xyz="0 0 0.0555" name="${name}" next="${next}" proximal_mesh_filename="0041_D86/D86-legacy-proximal.stl" proximal_tf_rpy="1.57079632679 -0.0 1.57079632679" proximal_tf_xyz="0 0 0.064"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0049" params="name next">
+		<xacro:robco_link_module mesh_filename="0049_I116-1000/I116-1000.stl" name="${name}" next="${next}" tf_rpy="0.0 -0.0 0.0" tf_xyz="0 0 1.0"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0009" params="name next">
+		<xacro:robco_link_module mesh_filename="0009_I86-500/I86-500.stl" name="${name}" next="${next}" tf_rpy="0.0 -0.0 0.0" tf_xyz="0 0 0.5"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0012" params="name next">
+		<xacro:robco_link_module mesh_filename="0012_L86-150/L86-150.stl" name="${name}" next="${next}" tf_rpy="0.0 1.57079632679 0" tf_xyz="0.15 0 0.053"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0804" params="name">
+		<xacro:robco_end_effector mesh_filename="0804_E-simple-ISO50/0804_E-simple-ISO50.stl" name="${name}" tf_rpy="0.0 -0.0 0.0" tf_xyz="0 0 0.034"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0080" params="name next">
+		<xacro:robco_link_module mesh_filename="0080_I148-600/I148-600.stl" name="${name}" next="${next}" tf_rpy="0.0 -0.0 0.0" tf_xyz="0 0 0.6"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0021" params="name next">
+		<xacro:robco_link_module mesh_filename="0021_L86-183/L86-183.stl" name="${name}" next="${next}" tf_rpy="0.0 1.57079632679 0" tf_xyz="0.186 0 0.053"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0095" params="name next">
+		<xacro:robco_link_module mesh_filename="0095_I116-305/I116-300.stl" name="${name}" next="${next}" tf_rpy="0.0 -0.0 0.0" tf_xyz="0 0 0.305"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0805" params="name">
+		<xacro:robco_end_effector mesh_filename="0805_E-simple-vacuum-90deg/0805_E-simple-vacuum-90deg.stl" name="${name}" tf_rpy="0.0 1.57079632679 0" tf_xyz="0.084 0 0.038"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0020" params="name next">
+		<xacro:robco_link_module mesh_filename="0020_L116-400/L116-400.stl" name="${name}" next="${next}" tf_rpy="0.0 1.57079632679 0" tf_xyz="0.4 0 0.068"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0030" params="name next">
+		<xacro:robco_link_module mesh_filename="0030_L116-200/L116-200.stl" name="${name}" next="${next}" tf_rpy="0.0 1.57079632679 0" tf_xyz="0.2 0 0.068"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0036" params="name next">
+		<xacro:robco_link_module mesh_filename="0036_L86-250/L86-250.stl" name="${name}" next="${next}" tf_rpy="0.0 1.57079632679 0" tf_xyz="0.25 0 0.053"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0078" params="name next">
+		<xacro:robco_link_module mesh_filename="0078_L116-350/L116-350.stl" name="${name}" next="${next}" tf_rpy="0.0 1.57079632679 0" tf_xyz="0.35 0 0.068"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0104" params="name next">
+		<xacro:robco_base_module mesh_filename="0104_B86-90deg/B86-90deg.stl" name="${name}" next="${next}" tf_rpy="0 -1.57079632679 -0.0" tf_xyz="-0.07 0 0"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0111" params="name next">
+		<xacro:robco_base_module mesh_filename="0111_B148/B148.stl" name="${name}" next="${next}" tf_rpy="0.0 -0.0 0.0" tf_xyz="0 0 0.071"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0093" params="name next">
+		<xacro:robco_link_module mesh_filename="0093_I86-305/I86-310.stl" name="${name}" next="${next}" tf_rpy="0.0 -0.0 0.0" tf_xyz="0 0 0.305"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0058" params="name next">
+		<xacro:robco_link_module mesh_filename="0058_I148-650/I148-650.stl" name="${name}" next="${next}" tf_rpy="0.0 -0.0 0.0" tf_xyz="0 0 0.65"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0806" params="name">
+		<xacro:robco_end_effector mesh_filename="0806_E-Piab-VGS4005-SX12/0806_E-Piab-VGS4005-SX12.stl" name="${name}" tf_rpy="0.0 -0.0 0.0" tf_xyz="0 0 0.068"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0803" params="name">
+		<xacro:robco_end_effector mesh_filename="0803_E-Weiss-cr_easy_cig_200-030/0803_E-Weiss-cr_easy_cig_200-030.stl" name="${name}" tf_rpy="0.0 -0.0 0.0" tf_xyz="0 0 0.1211"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0915" params="name">
+		<xacro:robco_end_effector mesh_filename="0915_E-trical-with-indicators-2500g/dummy.stl" name="${name}" tf_rpy="0.0 1.57079632679 0" tf_xyz="0.12 0 0.1"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0007" params="name next">
+		<xacro:robco_link_module mesh_filename="0007_I86-300/I86-300.stl" name="${name}" next="${next}" tf_rpy="0.0 -0.0 0.0" tf_xyz="0 0 0.3"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0932" params="name">
+		<xacro:robco_end_effector mesh_filename="0932_E-trical-weights-only-5000g/dummy.stl" name="${name}" tf_rpy="0.0 -0.0 0.0" tf_xyz="-0.08795 0 0.078"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0108" params="name next">
+		<xacro:robco_base_module mesh_filename="0108_B86-minus90deg/B86-minus90deg.stl" name="${name}" next="${next}" tf_rpy="3.14159265359 1.57079632679 0" tf_xyz="-0.07 0 0"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0013" params="name next">
+		<xacro:robco_link_module mesh_filename="0013_L86-200/L86-200.stl" name="${name}" next="${next}" tf_rpy="0.0 1.57079632679 0" tf_xyz="0.2 0 0.053"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0022" params="name next">
+		<xacro:robco_link_module mesh_filename="0022_L86-283/L86-283.stl" name="${name}" next="${next}" tf_rpy="0.0 1.57079632679 0" tf_xyz="0.286 0 0.053"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0083" params="name next">
+		<xacro:robco_link_module mesh_filename="0083_L148-670/L148-670.stl" name="${name}" next="${next}" tf_rpy="0.0 1.57079632679 0" tf_xyz="0.67 0 0.085"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0930" params="name">
+		<xacro:robco_end_effector mesh_filename="0930_E-trical-weights-only-4000g/dummy.stl" name="${name}" tf_rpy="0.0 -0.0 0.0" tf_xyz="-0.08795 0 0.078"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0910" params="name">
+		<xacro:robco_end_effector mesh_filename="0910_E-trical-with-indicators-0g/dummy.stl" name="${name}" tf_rpy="0.0 1.57079632679 0" tf_xyz="0.12 0 0.1"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0079" params="name next">
+		<xacro:robco_link_module mesh_filename="0079_L116-650/L116-650.stl" name="${name}" next="${next}" tf_rpy="0.0 1.57079632679 0" tf_xyz="0.65 0 0.068"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0904" params="name">
+		<xacro:robco_end_effector mesh_filename="0904_E-ECBPMi-fraunhofer/E-ECBPMi-fraunhofer.stl" name="${name}" tf_rpy="0.0 -0.0 0.0" tf_xyz="0 0 0"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0807" params="name">
+		<xacro:robco_end_effector mesh_filename="0807_E-Zimmer-GEP5008IO-00-A/0807_E-Zimmer-GEP5008IO-00-A.stl" name="${name}" tf_rpy="0.0 -0.0 0.0" tf_xyz="0 0 0.168"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0927" params="name">
+		<xacro:robco_end_effector mesh_filename="0927_E-trical-weights-only-2500g/dummy.stl" name="${name}" tf_rpy="0.0 -0.0 0.0" tf_xyz="-0.08795 0 0.078"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0076" params="name next">
+		<xacro:robco_link_module mesh_filename="0076_I116-600/I116-600.stl" name="${name}" next="${next}" tf_rpy="0.0 -0.0 0.0" tf_xyz="0 0 0.6"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0916" params="name">
+		<xacro:robco_end_effector mesh_filename="0916_E-trical-with-indicators-3000g/dummy.stl" name="${name}" tf_rpy="0.0 1.57079632679 0" tf_xyz="0.12 0 0.1"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0103" params="name next">
+		<xacro:robco_base_module mesh_filename="0103_B86/B86.stl" name="${name}" next="${next}" tf_rpy="0.0 -0.0 0.0" tf_xyz="0 0 0.07"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0082" params="name next">
+		<xacro:robco_link_module mesh_filename="0082_L148-470/L148-470.stl" name="${name}" next="${next}" tf_rpy="0.0 1.57079632679 0" tf_xyz="0.47 0 0.085"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0014" params="name next">
+		<xacro:robco_link_module mesh_filename="0014_L86-300/L86-300.stl" name="${name}" next="${next}" tf_rpy="0.0 1.57079632679 0" tf_xyz="0.3 0 0.053"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0809" params="name">
+		<xacro:robco_end_effector mesh_filename="0809_E-Gimatic-SZ32-NC/0809_E-Gimatic-SZ32-NC.stl" name="${name}" tf_rpy="0.0 -0.0 0.0" tf_xyz="0 0 0.1345"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0106" params="name next">
+		<xacro:robco_base_module mesh_filename="0106_B116-90deg/B116-90deg.stl" name="${name}" next="${next}" tf_rpy="0 -1.57079632679 -0.0" tf_xyz="-0.07 0 0"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0928" params="name">
+		<xacro:robco_end_effector mesh_filename="0928_E-trical-weights-only-3000g/dummy.stl" name="${name}" tf_rpy="0.0 -0.0 0.0" tf_xyz="-0.08795 0 0.078"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0926" params="name">
+		<xacro:robco_end_effector mesh_filename="0926_E-trical-weights-only-2000g/dummy.stl" name="${name}" tf_rpy="0.0 -0.0 0.0" tf_xyz="-0.08795 0 0.078"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0906" params="name">
+		<xacro:robco_end_effector mesh_filename="0906_E-gimatic-sz25-koch/E-gimatic-sz25-koch.stl" name="${name}" tf_rpy="0.0 -0.0 0.0" tf_xyz="0 0 0.107"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0917" params="name">
+		<xacro:robco_end_effector mesh_filename="0917_E-trical-with-indicators-3500g/dummy.stl" name="${name}" tf_rpy="0.0 1.57079632679 0" tf_xyz="0.12 0 0.1"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0808" params="name">
+		<xacro:robco_end_effector mesh_filename="0808_E-simple-vacuum-180deg/0808_E-simple-vacuum-180deg.stl" name="${name}" tf_rpy="0.0 -0.0 0.0" tf_xyz="0 0 0.099"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0024" params="name next">
+		<xacro:robco_link_module mesh_filename="0024_L116-1000/L116-1000.stl" name="${name}" next="${next}" tf_rpy="0.0 1.57079632679 0" tf_xyz="1.0 0 0.053"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0912" params="name">
+		<xacro:robco_end_effector mesh_filename="0912_E-trical-with-indicators-1000g/dummy.stl" name="${name}" tf_rpy="0.0 1.57079632679 0" tf_xyz="0.12 0 0.1"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0085" params="name next">
+		<xacro:robco_drive_module distal_mesh_filename="0085_D86/D86-876.0001-H-distal.stl" distal_tf_rpy="0.0 -0.0 1.57079632679" distal_tf_xyz="0 0 0.0552" name="${name}" next="${next}" proximal_mesh_filename="0085_D86/D86-876.0001-H-proximal.stl" proximal_tf_rpy="1.57079632679 -0.0 1.57079632679" proximal_tf_xyz="0 0 0.064"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0047" params="name next">
+		<xacro:robco_link_module mesh_filename="0047_L148-1000/L148-1000.stl" name="${name}" next="${next}" tf_rpy="0.0 1.57079632679 0" tf_xyz="1.0 0 0.085"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0063" params="name next">
+		<xacro:robco_link_module mesh_filename="0063_L148-400/L148-400.stl" name="${name}" next="${next}" tf_rpy="0.0 1.57079632679 0" tf_xyz="0.4 0 0.085"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0923" params="name">
+		<xacro:robco_end_effector mesh_filename="0923_E-trical-weights-only-500g/dummy.stl" name="${name}" tf_rpy="0.0 -0.0 0.0" tf_xyz="-0.08795 0 0.078"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0094" params="name next">
+		<xacro:robco_link_module mesh_filename="0094_L86-165/L86-165.stl" name="${name}" next="${next}" tf_rpy="0.0 1.57079632679 0" tf_xyz="0.165 0 0.053"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0914" params="name">
+		<xacro:robco_end_effector mesh_filename="0914_E-trical-with-indicators-2000g/dummy.stl" name="${name}" tf_rpy="0.0 1.57079632679 0" tf_xyz="0.12 0 0.1"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0037" params="name next">
+		<xacro:robco_drive_module distal_mesh_filename="0037_D86/D86-legacy-distal.stl" distal_tf_rpy="0.0 -0.0 1.57079632679" distal_tf_xyz="0 0 0.0555" name="${name}" next="${next}" proximal_mesh_filename="0037_D86/D86-legacy-proximal.stl" proximal_tf_rpy="1.57079632679 -0.0 1.57079632679" proximal_tf_xyz="0 0 0.064"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0091" params="name next">
+		<xacro:robco_drive_module distal_mesh_filename="0091_D148/D148-romeo-distal.stl" distal_tf_rpy="0.0 -0.0 1.57079632679" distal_tf_xyz="0 0 0.086" name="${name}" next="${next}" proximal_mesh_filename="0091_D148/D148-romeo-proximal.stl" proximal_tf_rpy="1.57079632679 -0.0 1.57079632679" proximal_tf_xyz="0 0 0.104"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0015" params="name next">
+		<xacro:robco_link_module mesh_filename="0015_L86-400/L86-400.stl" name="${name}" next="${next}" tf_rpy="0.0 1.57079632679 0" tf_xyz="0.4 0 0.053"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0059" params="name next">
+		<xacro:robco_link_module mesh_filename="0059_I116-650/I116-650.stl" name="${name}" next="${next}" tf_rpy="0.0 -0.0 0.0" tf_xyz="0 0 0.65"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0053" params="name next">
+		<xacro:robco_link_module mesh_filename="0053_I116-300/I116-300.stl" name="${name}" next="${next}" tf_rpy="0.0 -0.0 0.0" tf_xyz="0 0 0.3"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0925" params="name">
+		<xacro:robco_end_effector mesh_filename="0925_E-trical-weights-only-1500g/dummy.stl" name="${name}" tf_rpy="0.0 -0.0 0.0" tf_xyz="-0.08795 0 0.078"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0043" params="name next">
+		<xacro:robco_drive_module distal_mesh_filename="0043_D86/D86-legacy-distal.stl" distal_tf_rpy="0.0 -0.0 1.57079632679" distal_tf_xyz="0 0 0.0555" name="${name}" next="${next}" proximal_mesh_filename="0043_D86/D86-legacy-proximal.stl" proximal_tf_rpy="1.57079632679 -0.0 1.57079632679" proximal_tf_xyz="0 0 0.064"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0088" params="name next">
+		<xacro:robco_drive_module distal_mesh_filename="0088_D116/D116-876.0002-G-distal.stl" distal_tf_rpy="0.0 -0.0 1.57079632679" distal_tf_xyz="0 0 0.0702" name="${name}" next="${next}" proximal_mesh_filename="0088_D116/D116-876.0002-G-proximal.stl" proximal_tf_rpy="1.57079632679 -0.0 1.57079632679" proximal_tf_xyz="0 0 0.082"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0061" params="name next">
+		<xacro:robco_drive_module distal_mesh_filename="0061_D86/D86-legacy-distal.stl" distal_tf_rpy="0.0 -0.0 1.57079632679" distal_tf_xyz="0 0 0.0555" name="${name}" next="${next}" proximal_mesh_filename="0061_D86/D86-legacy-proximal.stl" proximal_tf_rpy="1.57079632679 -0.0 1.57079632679" proximal_tf_xyz="0 0 0.064"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0028" params="name next">
+		<xacro:robco_link_module mesh_filename="0028_L116-600/L116-600.stl" name="${name}" next="${next}" tf_rpy="0.0 1.57079632679 0" tf_xyz="0.6 0 0.068"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0027" params="name next">
+		<xacro:robco_link_module mesh_filename="0027_L116-500/L116-500.stl" name="${name}" next="${next}" tf_rpy="0.0 1.57079632679 0" tf_xyz="0.5 0 0.068"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0907" params="name">
+		<xacro:robco_end_effector mesh_filename="0907_E-perfecdos/E-perfecdos.stl" name="${name}" tf_rpy="0.0 -0.0 0.0" tf_xyz="0.1015 0 0.02798"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0105" params="name next">
+		<xacro:robco_base_module mesh_filename="0105_B116/B116.stl" name="${name}" next="${next}" tf_rpy="0.0 -0.0 0.0" tf_xyz="0 0 0.07"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0073" params="name next">
+		<xacro:robco_link_module mesh_filename="0073_L86-340/L86-340.stl" name="${name}" next="${next}" tf_rpy="0.0 1.57079632679 0" tf_xyz="0.34 0 0.053"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0032" params="name next">
+		<xacro:robco_link_module mesh_filename="0032_L86-383/L86-383.stl" name="${name}" next="${next}" tf_rpy="0.0 1.57079632679 0" tf_xyz="0.383 0 0.053"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0042" params="name next">
+		<xacro:robco_drive_module distal_mesh_filename="0042_D86/D86-legacy-distal.stl" distal_tf_rpy="0.0 -0.0 1.57079632679" distal_tf_xyz="0 0 0.0555" name="${name}" next="${next}" proximal_mesh_filename="0042_D86/D86-legacy-proximal.stl" proximal_tf_rpy="1.57079632679 -0.0 1.57079632679" proximal_tf_xyz="0 0 0.064"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0055" params="name next">
+		<xacro:robco_link_module mesh_filename="0055_L148-800/L148-800.stl" name="${name}" next="${next}" tf_rpy="0.0 1.57079632679 0" tf_xyz="0.8 0 0.085"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0006" params="name next">
+		<xacro:robco_link_module mesh_filename="0006_I86-200/I86-200.stl" name="${name}" next="${next}" tf_rpy="0.0 -0.0 0.0" tf_xyz="0 0 0.2"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0046" params="name next">
+		<xacro:robco_drive_module distal_mesh_filename="0046_D148/D148-November_distal.stl" distal_tf_rpy="0.0 -0.0 1.57079632679" distal_tf_xyz="0 0 0.086" name="${name}" next="${next}" proximal_mesh_filename="0046_D148/D148-November_proximal.stl" proximal_tf_rpy="1.57079632679 -0.0 1.57079632679" proximal_tf_xyz="0 0 0.104"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0044" params="name next">
+		<xacro:robco_drive_module distal_mesh_filename="0044_D116/D116-legacy_distal.stl" distal_tf_rpy="0.0 -0.0 1.57079632679" distal_tf_xyz="0 0 0.0705" name="${name}" next="${next}" proximal_mesh_filename="0044_D116/D116-legacy_proximal.stl" proximal_tf_rpy="1.57079632679 -0.0 1.57079632679" proximal_tf_xyz="0 0 0.082"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0092" params="name next">
+		<xacro:robco_link_module mesh_filename="0092_I86-270/0092_I86-270.stl" name="${name}" next="${next}" tf_rpy="0.0 -0.0 0.0" tf_xyz="0 0 0.27"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0922" params="name">
+		<xacro:robco_end_effector mesh_filename="0922_E-trical-weights-only-0g/dummy.stl" name="${name}" tf_rpy="0.0 -0.0 0.0" tf_xyz="-0.08795 0 0.078"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0003" params="name next">
+		<xacro:robco_drive_module distal_mesh_filename="0003_D116/D116-legacy_distal.stl" distal_tf_rpy="0.0 -0.0 1.57079632679" distal_tf_xyz="0 0 0.0705" name="${name}" next="${next}" proximal_mesh_filename="0003_D116/D116-legacy_proximal.stl" proximal_tf_rpy="1.57079632679 -0.0 1.57079632679" proximal_tf_xyz="0 0 0.082"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0066" params="name next">
+		<xacro:robco_drive_module distal_mesh_filename="0066_D116/D116-quebec-distal.stl" distal_tf_rpy="0.0 -0.0 1.57079632679" distal_tf_xyz="0 0 0.0705" name="${name}" next="${next}" proximal_mesh_filename="0066_D116/D116-quebec-proximal.stl" proximal_tf_rpy="1.57079632679 -0.0 1.57079632679" proximal_tf_xyz="0 0 0.082"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0051" params="name next">
+		<xacro:robco_link_module mesh_filename="0051_I116-800/I116-800.stl" name="${name}" next="${next}" tf_rpy="0.0 -0.0 0.0" tf_xyz="0 0 0.8"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0018" params="name next">
+		<xacro:robco_link_module mesh_filename="0018_L86-700/L86-700.stl" name="${name}" next="${next}" tf_rpy="0.0 1.57079632679 0" tf_xyz="0.7 0 0.053"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0023" params="name next">
+		<xacro:robco_link_module mesh_filename="0023_I86-250/I86-250.stl" name="${name}" next="${next}" tf_rpy="0.0 -0.0 0.0" tf_xyz="0 0 0.25"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0090" params="name next">
+		<xacro:robco_link_module mesh_filename="0090_L148-710/0090_L148-710.stl" name="${name}" next="${next}" tf_rpy="0.0 1.57079632679 0" tf_xyz="0.71 0 0.085"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0056" params="name next">
+		<xacro:robco_link_module mesh_filename="0056_I116-500/I116-500.stl" name="${name}" next="${next}" tf_rpy="0.0 -0.0 0.0" tf_xyz="0 0 0.5"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0075" params="name next">
+		<xacro:robco_link_module mesh_filename="0075_I116-450/I116-450.stl" name="${name}" next="${next}" tf_rpy="0.0 -0.0 0.0" tf_xyz="0 0 0.45"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0929" params="name">
+		<xacro:robco_end_effector mesh_filename="0929_E-trical-weights-only-3500g/dummy.stl" name="${name}" tf_rpy="0.0 -0.0 0.0" tf_xyz="-0.08795 0 0.078"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0911" params="name">
+		<xacro:robco_end_effector mesh_filename="0911_E-trical-with-indicators-500g/dummy.stl" name="${name}" tf_rpy="0.0 1.57079632679 0" tf_xyz="0.12 0 0.1"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0002" params="name next">
+		<xacro:robco_drive_module distal_mesh_filename="0002_D116/D116-legacy_distal.stl" distal_tf_rpy="0.0 -0.0 1.57079632679" distal_tf_xyz="0 0 0.0705" name="${name}" next="${next}" proximal_mesh_filename="0002_D116/D116-legacy_proximal.stl" proximal_tf_rpy="1.57079632679 -0.0 1.57079632679" proximal_tf_xyz="0 0 0.082"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0011" params="name next">
+		<xacro:robco_link_module mesh_filename="0011_I86-700/I86-700.stl" name="${name}" next="${next}" tf_rpy="0.0 -0.0 0.0" tf_xyz="0 0 0.7"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0050" params="name next">
+		<xacro:robco_link_module mesh_filename="0050_I148-1000/I148-1000.stl" name="${name}" next="${next}" tf_rpy="0.0 -0.0 0.0" tf_xyz="0 0 1.0"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0067" params="name next">
+		<xacro:robco_drive_module distal_mesh_filename="0067_D148/D148-romeo-distal.stl" distal_tf_rpy="0.0 -0.0 1.57079632679" distal_tf_xyz="0 0 0.086" name="${name}" next="${next}" proximal_mesh_filename="0067_D148/D148-romeo-proximal.stl" proximal_tf_rpy="1.57079632679 -0.0 1.57079632679" proximal_tf_xyz="0 0 0.104"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0074" params="name next">
+		<xacro:robco_link_module mesh_filename="0074_L86-440/L86-440.stl" name="${name}" next="${next}" tf_rpy="0.0 1.57079632679 0" tf_xyz="0.44 0 0.053"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0062" params="name next">
+		<xacro:robco_link_module mesh_filename="0062_I116-750/I116-750.stl" name="${name}" next="${next}" tf_rpy="0.0 -0.0 0.0" tf_xyz="0 0 0.75"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0052" params="name next">
+		<xacro:robco_link_module mesh_filename="0052_I148-800/I148-800.stl" name="${name}" next="${next}" tf_rpy="0.0 -0.0 0.0" tf_xyz="0 0 0.8"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0918" params="name">
+		<xacro:robco_end_effector mesh_filename="0918_E-trical-with-indicators-4000g/dummy.stl" name="${name}" tf_rpy="0.0 1.57079632679 0" tf_xyz="0.12 0 0.1"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0084" params="name next">
+		<xacro:robco_link_module mesh_filename="0084_L148-870/L148-870.stl" name="${name}" next="${next}" tf_rpy="0.0 1.57079632679 0" tf_xyz="0.87 0 0.085"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0016" params="name next">
+		<xacro:robco_link_module mesh_filename="0016_L86-500/L86-500.stl" name="${name}" next="${next}" tf_rpy="0.0 1.57079632679 0" tf_xyz="0.5 0 0.053"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0801" params="name">
+		<xacro:robco_end_effector mesh_filename="0801_E-Schmalz-ECBPMi/0801_E-Schmalz-ECBPMi.stl" name="${name}" tf_rpy="0.0 -0.0 0.0" tf_xyz="0 0 0.1265"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0001" params="name next">
+		<xacro:robco_drive_module distal_mesh_filename="0001_D86/D86-legacy-distal.stl" distal_tf_rpy="0.0 -0.0 1.57079632679" distal_tf_xyz="0 0 0.0555" name="${name}" next="${next}" proximal_mesh_filename="0001_D86/D86-legacy-proximal.stl" proximal_tf_rpy="1.57079632679 -0.0 1.57079632679" proximal_tf_xyz="0 0 0.064"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0070" params="name next">
+		<xacro:robco_link_module mesh_filename="0070_L86-350/L86-350.stl" name="${name}" next="${next}" tf_rpy="0.0 1.57079632679 0" tf_xyz="0.35 0 0.053"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0071" params="name next">
+		<xacro:robco_link_module mesh_filename="0071_I86-310/I86-310.stl" name="${name}" next="${next}" tf_rpy="0.0 -0.0 0.0" tf_xyz="0 0 0.31"/>
+	</xacro:macro>
+	<xacro:macro name="robco_module_0096" params="name next">
+		<xacro:robco_link_module mesh_filename="0096_L86-82/0096_L86-82.stl" name="${name}" next="${next}" tf_rpy="0 -1.57079632679 -3.14159265359" tf_xyz="0.082 0 0.053"/>
+	</xacro:macro>
+</robot>

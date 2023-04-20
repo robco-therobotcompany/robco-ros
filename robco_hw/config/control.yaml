@@ -1,0 +1,32 @@
+robco_state_controller:
+    type: "joint_state_controller/JointStateController"
+    publish_rate: 50
+robco_trajectory_controller:
+    type: "position_controllers/JointTrajectoryController"
+    joints:
+        - base_link__link_01
+        - link_01__link_02
+        - link_02__link_03
+        - link_03__link_04
+        - link_04__link_05
+    state_publish_rate: 1
+
+robco_position_controller_1:
+    type: "position_controllers/JointPositionController"
+    joint: base_link__link_01
+
+robco_position_controller_2:
+    type: "position_controllers/JointPositionController"
+    joint: link_01__link_02
+
+robco_position_controller_3:
+    type: "position_controllers/JointPositionController"
+    joint: link_02__link_03
+
+robco_position_controller_4:
+    type: "position_controllers/JointPositionController"
+    joint: link_03__link_04
+
+robco_position_controller_5:
+    type: "position_controllers/JointPositionController"
+    joint: link_04__link_05

@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+
+<robot name="robco" xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:include filename="$(find robco_description)/urdf/robco_modules.xacro"/>
+
+    <xacro:robco_module_0106 name="base" next="drive1"/>
+    <xacro:robco_module_0066 name="drive1" next="drive2"/>
+    <xacro:robco_module_0066 name="drive2" next="link1"/>
+    <xacro:robco_module_0078 name="link1" next="drive3"/>
+    <xacro:robco_module_0065 name="drive3" next="drive4"/>
+    <xacro:robco_module_0065 name="drive4" next="link2"/>
+    <xacro:robco_module_0007 name="link2" next="drive5"/>
+    <xacro:robco_module_0065 name="drive5" next="drive6"/>
+    <xacro:robco_module_0065 name="drive6" next="effector"/>
+    <xacro:robco_module_0801 name="effector"/>
+</robot>

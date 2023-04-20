@@ -1,0 +1,175 @@
+<?xml version="1.0" ?>
+
+<!--
+    robco.xacro
+    Provides macros for RobCo robot modules.
+-->
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:property name="description_package" value="robco_description"/>
+
+    <xacro:macro name="robco_base_module" params="name mesh_filename tf_rpy tf_xyz next">
+        <link name="${name}">
+            <visual>
+                <geometry>
+                    <mesh filename="package://${description_package}/meshes/${mesh_filename}"/>
+                </geometry>
+            </visual>
+        </link>
+
+        <xacro:if value="${next != ''}">
+            <joint name="${name}__${next}" type="fixed">
+                <origin rpy="${tf_rpy}" xyz="${tf_xyz}"/>
+                <parent link="${name}"/>
+                <child link="${next}"/>
+            </joint>
+        </xacro:if>
+    </xacro:macro>
+
+    <xacro:macro name="robco_link_module" params="name mesh_filename tf_rpy tf_xyz next">
+        <link name="${name}">
+            <visual>
+                <geometry>
+                    <mesh filename="package://${description_package}/meshes/${mesh_filename}"/>
+                </geometry>
+            </visual>
+        </link>
+
+        <xacro:if value="${next != ''}">
+            <joint name="${name}__${next}" type="fixed">
+                <origin rpy="${tf_rpy}" xyz="${tf_xyz}"/>
+                <parent link="${name}"/>
+                <child link="${next}"/>
+            </joint>
+        </xacro:if>
+     </xacro:macro>
+
+    <xacro:macro name="robco_drive_module" params="name proximal_mesh_filename distal_mesh_filename proximal_rpy proximal_xyz distal_rpy distal_xyz lim_lower:=-4.7124 lim_upper:=4.7124 next">
+        <!-- proximal link, calle ${name} to keep compatibility with next=... parameter -->
+        <link name="${name}">
+            <visual>
+                <geometry>
+                    <mesh filename="package://${description_package}/meshes/${proximal_mesh_filename}"/>
+                </geometry>
+            </visual>
+        </link>
+        
+        <link name="${name}_shaft">
+        </link>
+
+        <link name="${name}_distal">
+            <visual>
+                <geometry>
+                    <mesh filename="package://${description_package}/meshes/${distal_mesh_filename}"/>
+                </geometry>
+            </visual>
+        </link>
+
+        <joint name="${name}__${name}_shaft" type="fixed">
+            <origin rpy="${proximal_rpy}" xyz="${proximal_xyz}"/>
+            <parent link="${name}"/>
+            <child link="${name}_shaft"/>
+        </joint>
+        
+        <joint name="${name}_shaft__${name}_distal" type="revolute">
+            <origin rpy="${distal_rpy}" xyz="${distal_xyz}"/>
+            <axis xyz="0 0 1"/>
+            <limit lower="${lim_lower}" upper="${lim_upper}" effort="0" velocity="0"/>
+            <parent link="${name}_shaft"/>
+            <child link="${name}_distal"/>
+        </joint>
+
+        <xacro:if value="${next != ''}">
+            <joint name="${name}_distal__${next}" type="fixed">
+                <parent link="${name}_distal"/>
+                <child link="${next}"/>
+            </joint>
+        </xacro:if>
+     </xacro:macro>
+
+     <xacro:macro name="robco_end_effector" params="name mesh_filename tf_rpy tf_xyz">
+        <link name="${name}">
+            <visual>
+                <geometry>
+                    <mesh filename="package://${description_package}/meshes/${mesh_filename}"/>
+                </geometry>
+            </visual>
+        </link>
+     </xacro:macro>
+
+    <!-- ====================
+         === BASE MODULES ===
+         ==================== -->
+
+    <!-- 0106_B116-90deg -->
+    <xacro:macro name="robco_module_0106" params="name next">
+        <xacro:robco_base_module name="${name}"
+            mesh_filename="0106_B116-90deg/B116-90deg.stl"
+            tf_rpy="0 ${-pi/2} 0"
+            tf_xyz="-0.07 0 0"
+            next="${next}"/>
+    </xacro:macro>
+
+    <!-- ====================
+         === LINK MODULES ===
+         ==================== -->
+
+    <!-- 0078_L116-350 -->
+    <xacro:macro name="robco_module_0078" params="name next">
+        <xacro:robco_link_module name="${name}"
+            mesh_filename="0078_L116-350/L116-350.stl"
+            tf_rpy="0 ${pi/2} 0"
+            tf_xyz="0.35 0 0.068"
+            next="${next}"/>
+    </xacro:macro>
+
+    <!-- 0007_I86-300 -->
+    <xacro:macro name="robco_module_0007" params="name next">
+        <xacro:robco_link_module name="${name}"
+            mesh_filename="0007_I86-300/I86-300.stl"
+            tf_rpy="0 0 0"
+            tf_xyz="0 0 0.3"
+            next="${next}"/>
+    </xacro:macro>
+
+    <!-- =====================
+         === DRIVE MODULES ===
+         ===================== -->
+    
+    <!-- 0066_D116 -->
+    <xacro:macro name="robco_module_0066" params="name next">
+        <xacro:robco_drive_module name="${name}"
+            proximal_mesh_filename="0066_D116/D116-quebec-proximal.stl"
+            distal_mesh_filename="0066_D116/D116-quebec-distal.stl"
+            proximal_rpy="${pi/2} 0 ${pi/2}"
+            proximal_xyz="0 0 0.082"
+            distal_rpy="0 0 ${pi/2}"
+            distal_xyz="0 0 0.0705"
+            next="${next}"/>
+    </xacro:macro>
+
+    <!-- 0065_D86 -->
+    <xacro:macro name="robco_module_0065" params="name next">
+        <xacro:robco_drive_module name="${name}"
+            proximal_mesh_filename="0065_D86/D86-papa-proximal.stl"
+            distal_mesh_filename="0065_D86/D86-papa-distal.stl"
+            proximal_rpy="${pi/2} 0 ${pi/2}"
+            proximal_xyz="0 0 0.064"
+            distal_rpy="0 0 ${pi/2}"
+            distal_xyz="0 0 0.0555"
+            next="${next}"/>
+    </xacro:macro>
+
+    <!-- =====================
+         === END EFFECTORS ===
+         ===================== -->
+
+    <!-- 0801_E-Schmalz-ECBPMi -->
+    <xacro:macro name="robco_module_0801" params="name">
+        <xacro:robco_end_effector name="${name}"
+            mesh_filename="0801_E-Schmalz-ECBPMi/0801_E-Schmalz-ECBPMi.stl"
+            tf_rpy="0 0 0"
+            tf_xyz="0 0 0.1265"/>
+    </xacro:macro>
+
+</robot>

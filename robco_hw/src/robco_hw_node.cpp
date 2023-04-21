@@ -6,24 +6,29 @@
 #include <vector>
 #include <math.h>
 #include <robcomm/robcomm.hpp>
+#include <std_msgs/Float64.h>
 
-robcomm::Robot* robot;
+robcomm::Robot robot;
 RobcoHW* hw;
 controller_manager::ControllerManager* cm;
-ros::Subscriber websocketSub;
-//ros::Publisher jointPub;
 int jointMsgId = 0;
 
 void updateCallback(const ros::TimerEvent& evt) {
-    //ros::Duration elapsed_time = ros::Duration(evt.current_real - evt.last_real);
+    ros::Duration elapsed_time = ros::Duration(evt.current_real - evt.last_real);
 
-    robot->receive();
-    if (hw != nullptr)
-        hw->read(robot->getJointAngles());
+    try {
+        robot.receive();
+    } catch (const std::runtime_error& e) {
+        //printf("Error during receive(): %s", e.what());
+    }
+
+    if (hw != nullptr) {
+        hw->read(robot.getJointAngles());
+    }
+
 
     if (cm != nullptr) {
-        //cm->update(ros::Time::now(), elapsed_time);
-        cm->update(ros::Time::now(), ros::Duration(0.01));
+        cm->update(ros::Time::now(), elapsed_time);
     }
 
     if (hw != nullptr)
@@ -34,38 +39,36 @@ int main(int argc, char** argv) {
     ros::init(argc, argv, "ros_hw_interface_node");
     ros::NodeHandle n;
 
-    robot = new robcomm::Robot("192.168.178.93", 25001, 25000);
-    robot->connect();
+    robot.connect("192.168.3.1", 25001, 25000);
     
     // Run update callback at 100Hz, as recommended by Robco UDP documentation
     ros::Timer updateTimer = n.createTimer(ros::Duration(0.01), updateCallback);
 
-    // Wait for first messages
-    printf("Waiting for robot to initialize (TODO)\n");
-    for (int i = 0; i < 10; i ++) {
+    // Wait for robot connection to become initialized
+    printf("Waiting for robot to initialize...\n");
+    for (int i = 0; i < 1000 && !robot.is_initialized(); i ++) {
+        ros::Duration(0.01).sleep();
         ros::spinOnce();
-        ros::Duration(0.1).sleep();
     }
 
-    hw = new RobcoHW(*robot);
+    if (!robot.is_initialized()) {
+        printf("Timeout waiting for robot to initialize\n");
+        return -1;
+    }
+
+    hw = new RobcoHW(robot);
     cm = new controller_manager::ControllerManager(hw);
 
+    printf("%d joints found\n", robot.get_joint_count());
     printf("Robco robot interface initialized.\n");
 
-    robot->set_state(robcomm::ROBOT_STATE_CMD_OPERATIONAL);
+    robot.set_state(robcomm::ROBOT_STATE_CMD_OPERATIONAL);
     
     ros::AsyncSpinner spinner(0);
     spinner.start();
     ros::waitForShutdown();
 
-    //for (int i = 0; i < 1000; i ++) {
-    //    ros::TimerEvent evt;
-    //    updateCallback(evt);
-    //    ros::spinOnce();
-    //    ros::Duration(0.01).sleep();
-    //}
-
-    robot->set_state(robcomm::ROBOT_STATE_CMD_SWITCHED_ON);
+    robot.set_state(robcomm::ROBOT_STATE_CMD_SWITCHED_ON);
 
     printf("Robco robot interface is exiting.\n");
 

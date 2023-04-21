@@ -146,6 +146,8 @@ target_link_libraries(robco_hw_node
   robcomm
 )
 
+target_compile_options(robco_hw_node PUBLIC -g)
+
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
 ## target back to the shorter version for ease of user use

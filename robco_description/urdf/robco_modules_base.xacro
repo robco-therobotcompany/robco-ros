@@ -87,7 +87,7 @@
         <joint name="${name}_joint" type="revolute">
             <origin rpy="${distal_tf_rpy}" xyz="${distal_tf_xyz}"/>
             <axis xyz="0 0 1"/>
-            <limit lower="${lim_lower}" upper="${lim_upper}" effort="0" velocity="0"/>
+            <limit lower="${lim_lower}" upper="${lim_upper}" effort="0" velocity="4.25"/>
             <parent link="${name}_shaft"/>
             <child link="${name}_distal"/>
         </joint>

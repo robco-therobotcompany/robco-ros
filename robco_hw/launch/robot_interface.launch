@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <launch>
     <arg name="debug" default="false"/>
-    <param name="robot_description" command="$(find xacro)/xacro $(find robco_description)/urdf/robot.xacro"/>
+    <param name="robot_description" command="$(find xacro)/xacro $(find robco_description)/urdf/hs_aalen.xacro"/>
 
     <node name="robco_hw" pkg="robco_hw" type="robco_hw_node" output="screen" launch-prefix="xterm -e gdb --args" if="$(arg debug)"/>
     <node name="robco_hw" pkg="robco_hw" type="robco_hw_node" output="screen" unless="$(arg debug)"/>

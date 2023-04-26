@@ -1,6 +1,5 @@
 #include "ros/ros.h"
 #include <robco_hw/robco_hw.h>
-#include <robco_hw/RobcoJointAngles.h>
 #include "controller_manager/controller_manager.h"
 #include "sensor_msgs/JointState.h"
 #include <vector>

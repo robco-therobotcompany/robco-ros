@@ -3,10 +3,7 @@
 #include <hardware_interface/joint_command_interface.h>
 #include <hardware_interface/joint_state_interface.h>
 #include <hardware_interface/robot_hw.h>
-#include <curl/curl.h>
 #include <stdlib.h>
-#include <array>
-#include <curl/curl.h>
 #include <math.h>
 #include <sstream>
 #include <iostream>
@@ -32,10 +29,6 @@ RobcoHW::RobcoHW(robcomm::Robot& robot) : robot(robot) {
         hardware_interface::JointStateHandle state_handle(jointName.str(), &(*q_it), &(*dq_it), &(*eff_it));
         jnt_state_interface.registerHandle(state_handle);
 
-        // Connect and register the joint position interface
-        //hardware_interface::JointHandle pos_handle(jnt_state_interface.getHandle(joint_names[i]), &cmd[i]);
-        //jnt_pos_interface.registerHandle(pos_handle);
-
         // Connect and register the joint velocity interface
         hardware_interface::JointHandle vel_handle(jnt_state_interface.getHandle(jointName.str()), &(*cmd_it));
         jnt_vel_interface.registerHandle(vel_handle);
@@ -46,7 +39,6 @@ RobcoHW::RobcoHW(robcomm::Robot& robot) : robot(robot) {
         cmd_it++;
     }
 
-    //registerInterface(&jnt_pos_interface);
     registerInterface(&jnt_vel_interface);
     registerInterface(&jnt_state_interface);
 }

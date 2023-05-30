@@ -17,8 +17,7 @@ class RobcoHW : public hardware_interface::RobotHW
         /**
          * @brief Initialize a new hardware interface.
          * 
-         * @param joint_names Array of joint name strings, up to ROBCO_MAX_JOINTS entries.
-         *                    Unused joints at the end can be left blank ("").
+         * @param robot Instance of librobcomm robot object to use for communication.
          */
         RobcoHW(robcomm::Robot& robot);
         ~RobcoHW();

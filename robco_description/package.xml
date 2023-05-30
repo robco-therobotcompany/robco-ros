@@ -52,6 +52,7 @@
   <build_depend>urdf</build_depend>
   <build_export_depend>urdf</build_export_depend>
   <exec_depend>urdf</exec_depend>
+  <exec_depend>ros_controllers</exec_depend>
 
 
   <!-- The export tag contains other, unspecified, tags -->

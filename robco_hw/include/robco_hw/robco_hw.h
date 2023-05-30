@@ -9,6 +9,8 @@
 #include <robcomm/robcomm.hpp>
 #include <list>
 
+#define ROBCO_HW_LOGNAME "robco_hw"
+
 const int ROBCO_MAX_JOINTS = 12; // Currently, a maximum of 12 joints are supported
 
 class RobcoHW : public hardware_interface::RobotHW

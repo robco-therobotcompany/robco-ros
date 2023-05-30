@@ -1,15 +1,26 @@
 <?xml version="1.0"?>
-<launch>
-    <arg name="debug" default="false"/>
-    <param name="robot_description" command="$(find xacro)/xacro $(find robco_description)/urdf/demo_robot.xacro"/>
 
-    <node name="robco_hw" pkg="robco_hw" type="robco_hw_node" output="screen" launch-prefix="xterm -e gdb --args" if="$(arg debug)"/>
-    <node name="robco_hw" pkg="robco_hw" type="robco_hw_node" output="screen" unless="$(arg debug)"/>
+<!-- robot_interface.launch
+    Starts a robco_hw_node, which provides the hardware interface to a
+    Robco robot, along with a JointTrajectoryController and a robot state
+    publisher for basic control.
+-->
+
+<launch>
+    <!-- Robot connection parameters -->
+    <arg name="robot_ip" default="192.168.3.1"/>
+    <arg name="robot_local_port" default="25001"/>
+    <arg name="robot_remote_port" default="25000"/>
+
+    <node name="robco_hw" pkg="robco_hw" type="robco_hw_node" output="screen">
+        <param name="robot_ip" type="string" value="$(arg robot_ip)"/>
+        <param name="local_rx_port" type="int" value="$(arg robot_local_port)"/>
+        <param name="remote_tx_port" type="int" value="$(arg robot_remote_port)"/>
+    </node>
 
     <rosparam command="load" file="$(find robco_hw)/config/control.yaml"/>
-    <node name="state_controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" args="robco_state_controller robco_trajectory_controller"/>
-    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" output="screen"/>
-    <!--<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" output="screen">
-        <rosparam param="source_list">[robco_state_controller/joint_states]</rosparam>
-    </node>-->
+    <node name="state_controller_spawner" pkg="controller_manager" type="spawner"
+        respawn="false" output="screen" args="robco_state_controller robco_trajectory_controller"/>
+    <node name="robot_state_publisher" pkg="robot_state_publisher"
+        type="robot_state_publisher" output="screen"/>
 </launch>

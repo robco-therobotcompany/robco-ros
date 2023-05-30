@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<!-- demo.launch
+    Starts the robot interface, as well as a GUI for the
+    JointTrajectoryController, which allows interactive control of joint angles.
+-->
+
+<launch>
+    <!-- Robot connection parameters -->
+    <arg name="robot_ip" default="192.168.3.1"/>
+    <arg name="robot_local_port" default="25001"/>
+    <arg name="robot_remote_port" default="25000"/>
+
+    <param name="robot_description" command="$(find xacro)/xacro $(find robco_description)/urdf/demo_robot.xacro"/>
+
+    <include file="$(find robco_hw)/launch/robot_interface.launch">
+        <arg name="robot_ip" value="$(arg robot_ip)"/>
+        <arg name="robot_local_port" value="$(arg robot_local_port)"/>
+        <arg name="robot_remote_port" value="$(arg robot_remote_port)"/>
+    </include>
+</launch>

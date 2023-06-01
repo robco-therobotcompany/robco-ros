@@ -141,7 +141,18 @@ add_executable(robco_hw_node
     src/robco_hw.cpp
     src/robco_hw_node.cpp
 )
+
+add_executable(urdf_generator
+    src/urdf_generator.cpp
+)
+
 target_link_libraries(robco_hw_node
+  ${catkin_LIBRARIES}
+  ${robcomm_LIBRARIES}
+  robcomm
+)
+
+target_link_libraries(urdf_generator
   ${catkin_LIBRARIES}
   ${robcomm_LIBRARIES}
   robcomm

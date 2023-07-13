@@ -52,9 +52,8 @@ void RobcoHW::read(std::vector<double> q) {
         return;
     }
 
-    auto it = this->q.begin();
     for (int i = 0; i <  num_joints; i ++) {
-        *(it++) = q[i];
+        this->q[i] = q[i];
     }
 }
 

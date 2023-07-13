@@ -7,7 +7,7 @@
 #include <array>
 #include <curl/curl.h>
 #include <robcomm/robcomm.hpp>
-#include <list>
+#include <vector>
 
 #define ROBCO_HW_LOGNAME "robco_hw"
 
@@ -51,10 +51,10 @@ class RobcoHW : public hardware_interface::RobotHW
         hardware_interface::VelocityJointInterface jnt_vel_interface;
 
         int num_joints;
-        std::list<double> cmd;
-        std::list<double> q;
-        std::list<double> dq;
-        std::list<double> eff;
+        std::vector<double> cmd;
+        std::vector<double> q;
+        std::vector<double> dq;
+        std::vector<double> eff;
 };
 
 #endif // ROBCO_HW_H

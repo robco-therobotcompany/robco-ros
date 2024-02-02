@@ -21,6 +21,8 @@ BASE_MODULE_TYPE = 'Base'
 LINK_MODULE_TYPE = 'Link'
 DRIVE_MODULE_TYPE = 'Drive'
 TOOL_MODULE_TYPE = 'Tool'
+CLAMP_MODULE_TYPE = 'Clamp'
+BASEDRIVE_MODULE_TYPE = 'BaseDrive'
 
 class bcolors:
     HEADER = '\033[95m'
@@ -97,12 +99,14 @@ def getUrdfTransformFromJsonMatrix(matrixDict):
 def getModuleXacro(moduleDir, jsonDict):
     xmlStr = ''
     moduleType = jsonDict['module-type']
-    if moduleType == DRIVE_MODULE_TYPE:
+    if moduleType == DRIVE_MODULE_TYPE or moduleType == BASEDRIVE_MODULE_TYPE:
         xmlStr += getDriveModuleXacro(moduleDir, jsonDict)
-    elif moduleType == LINK_MODULE_TYPE or moduleType == BASE_MODULE_TYPE:
+    elif moduleType == LINK_MODULE_TYPE or moduleType == BASE_MODULE_TYPE or moduleType == CLAMP_MODULE_TYPE:
         xmlStr += getLinkModuleXacro(moduleDir, jsonDict) # link and base modules are effectively the same
     elif moduleType == TOOL_MODULE_TYPE:
         xmlStr += getToolModuleXacro(moduleDir, jsonDict)
+    else:
+        raise Exception('Invalid module type "' + moduleType + '" in getModuleXacro')
 
     return xmlStr
 
@@ -116,6 +120,8 @@ def getLinkModuleXacro(moduleDir, jsonDict):
     if moduleType == BASE_MODULE_TYPE:
         xmlStr += '<xacro:robco_base_module name="${name}"'
     elif moduleType == LINK_MODULE_TYPE:
+        xmlStr += '<xacro:robco_link_module name="${name}"'
+    elif moduleType == CLAMP_MODULE_TYPE:
         xmlStr += '<xacro:robco_link_module name="${name}"'
     else:
         raise Exception('Invalid module type in getLinkModuleXacro')
@@ -245,6 +251,9 @@ def main():
             continue
 
         print(bcolors.OKGREEN + " OK" + bcolors.ENDC)
+
+    if errorOccurred:
+        print(bcolors.FAIL + "ERROR" + bcolors.ENDC + " Generation completed with errors!")
 
     xmlStr += '</robot>'
 
